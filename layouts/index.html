@@ -11,7 +11,7 @@
 {{ with .Site.GetPage "/headless" }}
     {{ range first 9 (sort .Data.Pages "Date" "desc")}}
         <a href="{{ .Permalink }}" title="{{ .Title }}"><p class="projectTitle">{{ .Title }}</p>
-        {{ $image := .Page.Resources.GetMatch .Params.image }}
+        {{ $image := resources.Get .Params.image }}
         {{ with $image }}
             {{ $thumb := .Resize "400x" }}
             <img src="{{ $thumb.Permalink }}" alt="{{ .Title }}" class="img-responsive">
