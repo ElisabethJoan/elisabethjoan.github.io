@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #42A9EE;
+  --secondary-color: #C3C3C3;
+  --global-font-color: #EEEEEE;
+  --font-color: #FFFFFFF;
+  --background-color: #1C1C1C;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+div.logo.terminal-prompt {
+  color: var(--global-font-color) !important;
+}
+
+p {
+  margin-bottom: 0.06em;
+}
+
+p.projectTitle {
+  color: var(--primary-color) !important;
+  margin-left: 0.20em;
+  margin-bottom: 0.13em;
+}
+
+a:hover p.projectTitle {
+  color: var(--global-font-color) !important;
+}
+
+.footer {
+  font-size: 10pt;
+  margin-top: 40px;
+}
+
+.img-responsive {
+  height: 350px;
+}

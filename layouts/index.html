@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ range .Site.Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+{{ end }}
+<p>
+  A collection of projects in varying states of completion. <!-- <a href="about/">(more)</a> -->
+</p>
+<br>
+
+<div class="image-grid">
+{{ with .Site.GetPage "/headless" }}
+    {{ range first 9 (sort .Data.Pages "Date" "desc")}}
+        <a href="{{ .Permalink }}" title="{{ .Title }}"><p class="projectTitle">{{ .Title }}</p>
+        {{ $image := .Page.Resources.GetMatch .Params.image }}
+        {{ with $image }}
+            {{ $thumb := .Resize "400x" }}
+            <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+        {{end}}
+        </a>
+    {{ end }}
+{{ end }}
+</div>
+
+{{ end }}
