@@ -1,7 +1,8 @@
 {{ define "main" }}
-{{ range .Site.Params.customCSS }}
-  <link rel="stylesheet" href="{{ . | relURL }}">
-{{ end }}
+
+<head>
+  <link rel="stylesheet" href="{{ "css/custom.css" | resources.Get | resources.Minify | resources.Fingerprint | relURL }}">
+</head>
 
 <br>
 <p>Page not found</p>
