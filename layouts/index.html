@@ -10,7 +10,7 @@
 <div class="image-grid">
 {{ with .Site.GetPage "/headless" }}
     {{ range first 9 (sort .Data.Pages "Date" "desc")}}
-        <a href="{{ .Permalink }}" title="{{ .Title }}"><p class="projectTitle">{{ .Title }}</p>
+        <a href="{{ .Permalink }}" title="{{ .Title }}"><p class="projectTitle">{{ .Params.display }}</p>
         {{ $image := resources.Get .Params.image }}
         {{ with $image }}
             {{ $thumb := .Resize "400x" }}
