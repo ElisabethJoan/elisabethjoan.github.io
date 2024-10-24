@@ -28,6 +28,11 @@ a:hover p.projectTitle {
   color: var(--global-font-color) !important;
 }
 
+a:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .footer {
   font-size: 10pt;
   margin-top: 40px;
